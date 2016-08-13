@@ -200,6 +200,7 @@ getSeasonPlayerGameStats <- function(seasons, verbose = T, dates = F, teams = F,
       flush.console()
       print(paste0(i, " of ", nrow(schedules), ": ", schedules$home_abbv[i], " vs. ",
                    schedules$visitor_abbv[i], " on ", schedules$date[i]))
+      #print(schedules$boxscore[i])
     }
     nrow_start <- nrow(df_out)
     try({
