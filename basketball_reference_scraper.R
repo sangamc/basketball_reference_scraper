@@ -96,8 +96,14 @@ getPlayerGameStats <- function(url, home, visitor, date){
   tbl <- readHTMLTable(pg, stringsAsFactors = F)
   # ff <- tbl$four_factors
   visitor_basic <- tbl[[paste0(visitor, "_basic")]]
+  visitor_basic$start <- NA
+  visitor_basic$start[1:5] <- T
+  visitor_basic$start[6:nrow(visitor_basic)] <- F
   visitor_advanced <- tbl[[paste0(visitor, "_advanced")]]
   home_basic <- tbl[[paste0(home, "_basic")]]
+  home_basic$start <- NA
+  home_basic$start[1:5] <- T
+  home_basic$start[6:nrow(visitor_basic)] <- F
   home_advanced <- tbl[[paste0(home, "_advanced")]]
   
   #bind data.frames

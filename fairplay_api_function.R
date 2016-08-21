@@ -67,3 +67,8 @@ getSpreads <- function(url){
 
 tbl <- getSpreads(url)
 
+
+
+1 / (tbl$on[1] + 1)
+1 / (tbl$against[1] + 1)
+
